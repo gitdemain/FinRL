@@ -78,7 +78,7 @@ class StockTradingEnv(gym.Env):
         self.trades = 0
         self.episode = 0
         # memorize all the total balance change
-        self.asset_memory = [self.initial_amount+np.sum(np.array(self.initial_list[1:])*np.array(self.state[1:1+self.stock_dim]))] # the initial total asset is calculated by cash + sum (num_share_stock_i * price_stock_i)
+        self.asset_memory = [self.initial_amount+np.sum(np.array(self.initial_list[0:])*np.array(self.state[1:1+self.stock_dim]))] # the initial total asset is calculated by cash + sum (num_share_stock_i * price_stock_i)
         self.rewards_memory = []
         self.actions_memory = []
         self.state_memory=[] # we need sometimes to preserve the state in the middle of trading process 
