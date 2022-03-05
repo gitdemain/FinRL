@@ -333,7 +333,7 @@ class StockTradingEnv(gym.Env):
         self.state = self._initiate_state()
 
         if self.initial:
-            self.asset_memory = [self.initial_amount+np.sum(np.array(self.initial_list[1:])*np.array(self.state[1:1+self.stock_dim]))]
+            self.asset_memory = [self.initial_amount+np.sum(np.array(self.initial_list[0:])*np.array(self.state[1:1+self.stock_dim]))]
         else:
             previous_total_asset = self.previous_state[0] + sum(
                 np.array(self.state[1 : (self.stock_dim + 1)])
